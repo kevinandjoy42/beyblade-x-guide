@@ -32,6 +32,9 @@
       "lang": "zh-Hant",
       "themeColor": "#08090F",
       "backgroundColor": "#08090F"
+    },
+    "experiments": {
+      "baseUrl": "/beyblade-x-guide"
     }
   }
 }
