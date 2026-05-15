@@ -14,6 +14,7 @@ export interface Blade {
   tips: string;
   popularity: number; // 1-5
   tier?: number; // 0-5, 阿土天梯排名 (0=T0最強, 5=T5不推薦)
+  bbxScore?: number; // BBX Weekly 賽事積分 (越高越強)
 }
 
 export interface Ratchet {

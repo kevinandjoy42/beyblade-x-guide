@@ -47,7 +47,11 @@ export default function HomeScreen({ navigation }: Props) {
     .sort((a, b) => {
       switch (sortMode) {
         case 'popular': return b.popularity - a.popularity;
-        case 'tier': return (a.tier ?? 99) - (b.tier ?? 99);
+        case 'tier': {
+          const t = (a.tier ?? 99) - (b.tier ?? 99);
+          if (t !== 0) return t;
+          return (b.bbxScore ?? 0) - (a.bbxScore ?? 0);
+        }
         case 'name': return a.nameZh.localeCompare(b.nameZh, 'zh-Hant');
         default: return 0;
       }
