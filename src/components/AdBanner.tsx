@@ -15,7 +15,11 @@ const HEIGHT: Record<AdSize, number> = {
   sidebar: 250,
 };
 
+const ADS_ENABLED = false;
+
 export default function AdBanner({ size = 'banner', slot }: Props) {
+  if (!ADS_ENABLED) return null;
+
   if (Platform.OS === 'web' && slot) {
     return (
       <View style={[styles.container, { minHeight: HEIGHT[size] }]}>
